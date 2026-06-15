@@ -1,4 +1,22 @@
-/* RESET */
+/* =========================
+   ROOT COLOR SYSTEM
+========================= */
+:root {
+  --bg: #0b1220;
+  --text: #ffffff;
+
+  --primary: #38bdf8;
+  --secondary: #a855f7;
+  --accent: #0ea5e9;
+  --danger: #ef4444;
+  --muted: #94a3b8;
+
+  --glass: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +25,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* =========================
+   BODY (MODERN GRADIENT BG)
+========================= */
 body {
-  background: #0b1220;
-  color: white;
+  background: radial-gradient(circle at top left, #0b1220, #070b14);
+  color: var(--text);
   overflow-x: hidden;
 }
 
@@ -21,7 +42,8 @@ body::before {
   left: -200px;
   width: 500px;
   height: 500px;
-  background: rgba(56, 189, 248, 0.2);
+  background: var(--primary);
+  opacity: 0.15;
   filter: blur(120px);
   z-index: -1;
 }
@@ -33,21 +55,27 @@ body::after {
   right: -200px;
   width: 500px;
   height: 500px;
-  background: rgba(168, 85, 247, 0.2);
+  background: var(--secondary);
+  opacity: 0.15;
   filter: blur(120px);
   z-index: -1;
 }
 
-/* GLOBAL SECTION STYLE */
+/* =========================
+   GLOBAL SECTION
+========================= */
 section {
   padding: 100px 10%;
+  scroll-margin-top: 100px;
 }
 
-/* GLASSMORPHISM CARD BASE */
+/* =========================
+   GLASSMORPHISM CARD
+========================= */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 25px;
   transition: 0.3s ease;
@@ -55,12 +83,14 @@ section {
 
 .glass:hover {
   transform: translateY(-8px);
-  border-color: rgba(56, 189, 248, 0.5);
+  border-color: var(--primary);
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS (MODERN GRADIENT)
+========================= */
 .btn {
-  background: #38bdf8;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   padding: 12px 25px;
   border-radius: 10px;
@@ -71,12 +101,12 @@ section {
 }
 
 .btn:hover {
-  background: #0ea5e9;
   transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .btn-outline {
-  border: 2px solid #38bdf8;
+  border: 2px solid var(--primary);
   padding: 12px 25px;
   border-radius: 10px;
   color: white;
@@ -85,32 +115,39 @@ section {
 }
 
 .btn-outline:hover {
-  background: #38bdf8;
+  background: var(--primary);
 }
 
-/* HEADINGS */
+/* =========================
+   HEADINGS
+========================= */
 h1,
 h2,
 h3 {
-  color: white;
+  color: var(--text);
 }
 
 h2 {
   margin-bottom: 20px;
-  color: #38bdf8;
+  color: var(--primary);
   font-size: 2rem;
 }
 
-/* SCROLLBAR */
+/* =========================
+   SCROLLBAR
+========================= */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #38bdf8;
+  background: linear-gradient(var(--primary), var(--secondary));
   border-radius: 10px;
 }
 
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -123,7 +160,7 @@ h2 {
 }
 
 .logo {
-  color: #38bdf8;
+  color: var(--primary);
 }
 
 .nav {
@@ -138,7 +175,7 @@ h2 {
 }
 
 .nav a:hover {
-  color: #38bdf8;
+  color: var(--primary);
 }
 
 .nav-right {
@@ -161,7 +198,7 @@ h2 {
     position: absolute;
     top: 70px;
     right: 0;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--glass);
     backdrop-filter: blur(20px);
     flex-direction: column;
     width: 200px;
@@ -178,6 +215,9 @@ h2 {
   }
 }
 
+/* =========================
+   HERO
+========================= */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -194,7 +234,7 @@ h2 {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid #38bdf8;
+  border: 3px solid var(--primary);
   margin-bottom: 20px;
 }
 
@@ -205,14 +245,18 @@ h2 {
   justify-content: center;
 }
 
-
-
+/* =========================
+   ABOUT
+========================= */
 #about p {
   margin-top: 10px;
   line-height: 1.8;
-  color: #cbd5e1;
+  color: var(--muted);
 }
 
+/* =========================
+   SKILLS
+========================= */
 .skill-item {
   margin-bottom: 15px;
 }
@@ -225,18 +269,19 @@ h2 {
 
 .progress {
   height: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
 }
 
 .progress-bar {
   height: 10px;
-  background: #38bdf8;
   border-radius: 10px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
-
-
+/* =========================
+   RESUME
+========================= */
 .resume-box {
   text-align: center;
   max-width: 600px;
@@ -245,11 +290,13 @@ h2 {
 
 .resume-icon {
   font-size: 3rem;
-  color: #38bdf8;
+  color: var(--primary);
   margin-bottom: 10px;
 }
 
-
+/* =========================
+   PROJECTS
+========================= */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -258,52 +305,31 @@ h2 {
 
 .project-card {
   text-align: center;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--primary);
 }
 
 .project-icon {
   font-size: 2.5rem;
-  color: #38bdf8;
+  color: var(--primary);
   margin-bottom: 10px;
 }
 
-
+/* =========================
+   TIMELINE
+========================= */
 .timeline {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-
-.footer {
-  text-align: center;
-  margin-top: 50px;
-  padding: 40px;
-}
-
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-size: 1.8rem;
-  margin: 15px 0;
-}
-
-.socials a {
-  color: #38bdf8;
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  transform: scale(1.2);
-}
-
-.copy {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #94a3b8;
-}
-
-
+/* =========================
+   CONTACT
+========================= */
 .contact-box {
   max-width: 600px;
   margin: auto;
@@ -329,15 +355,50 @@ h2 {
 
 .status {
   margin-top: 10px;
-  color: #38bdf8;
+  color: var(--primary);
 }
 
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 40px;
+}
 
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.8rem;
+  margin: 15px 0;
+}
+
+.socials a {
+  color: var(--primary);
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: var(--secondary);
+  transform: scale(1.2);
+}
+
+.copy {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* =========================
+   SCROLL BUTTON
+========================= */
 .scroll-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: #38bdf8;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   border: none;
   padding: 12px;
@@ -350,15 +411,12 @@ h2 {
 
 .scroll-btn:hover {
   transform: scale(1.1);
-  background: #0ea5e9;
+  filter: brightness(1.1);
 }
 
-
-section {
-  scroll-margin-top: 100px;
-}
-
-
+/* =========================
+   EXTRA UX
+========================= */
 a,
 button {
   transition: 0.3s ease;
