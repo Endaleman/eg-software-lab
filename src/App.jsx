@@ -5,7 +5,7 @@ import Skills from "./components/Skills";
 import Timeline from "./components/Timeline";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
-import Contact from "./Components/Contact";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
