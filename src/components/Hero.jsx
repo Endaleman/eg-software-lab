@@ -1,6 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import backgroundImg from "../assets/Background2.jpg";
+import profileImg from "../assests/profile.jpg";
 
 function Hero() {
     return (
