@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutBg from "../assets/background2.jpg";
+import aboutBg from "../assets/Background2.jpg";
 
 function About() {
     return (
